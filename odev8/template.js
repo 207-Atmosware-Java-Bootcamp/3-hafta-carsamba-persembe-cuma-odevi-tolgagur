@@ -7,7 +7,7 @@ var showDate = document.getElementById("date");
 showDate.onclick = function () {
   updateClock();
 }
-
+// date bilgisinin alınması
 function updateClock() {
   var now = new Date();
   var dname = now.getDay(),
@@ -15,9 +15,11 @@ function updateClock() {
     dnum = now.getDate(),
     yr = now.getFullYear()
 
+    //bilgilerin karsılıklarının dizilerde tutulma işlemi
   var months = ["Ocak", "Sub", "Mart", "Nisan", "May", "Haz", "Tem", "Ağus", "Eylül", "Ekim", "Kasım", "Aralık"];
   var week = ["", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
   var ids = ["dayname", "month", "daynum", "year"];
+
 
   var values = [week[dname], months[mo], dnum, yr];
 
