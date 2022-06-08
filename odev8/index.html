@@ -29,28 +29,58 @@
 
   <!-- external css -->
   <link rel="stylesheet" href="./style.css" />
+
+  <script>
+    $(function () {
+      // run the currently selected effect
+      function runEffect() {
+        // get effect type from
+        var selectedEffect = $("Blind").val();
+        // Most effect types need no options passed by default
+        var options = {};
+        // some effects have required parameters
+        if (selectedEffect === "scale") {
+          options = { percent: 50 };
+        } else if (selectedEffect === "size") {
+          options = { to: { width: 200, height: 60 } };
+        }
+
+        // Run the effect
+        $("#effect").toggle(selectedEffect, options, 500);
+      };
+
+      // Set effect from select menu value
+      $("#date").on("click", function () {
+        runEffect();
+      });
+    });
+  </script>
 </head>
 
 <body>
   <div class="global-container">
     <div class="title">
-      <div class="datetime">
-        <div class="date">
-          <span id="dayname"> </span>
-          <span id="daynum"> </span>
-          <span id="month"> </span>
-          <span id="year"> </span>
-        </div>
-        <div class="time">
-        </div>
-        <div class="title">
+
+      <div id="effect">
+        <div class="datetime" id="effect">
+          <div class="date">
+            <span id="dayname"> </span>
+            <span id="daynum"> </span>
+            <span id="month"> </span>
+            <span id="year"> </span>
+          </div>
+          <div class="time">
+          </div>
+          <div class="title">
+          </div>
         </div>
       </div>
-      <input type="button" name="button" id="date" value="Show Date">
     </div>
+
+    <input type="button" name="button" id="date" value="Show Date">
   </div>
   </div>
-  </div>
+  
 
 
 
