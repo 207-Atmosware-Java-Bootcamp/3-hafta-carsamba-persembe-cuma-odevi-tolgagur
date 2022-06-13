@@ -1,4 +1,4 @@
- ARASTİRMA ODEVLERİ
+    ARASTİRMA ODEVLERİ
  1)JS  toString() ile join()  nelerdir ?
  2)
 
